@@ -4,7 +4,6 @@ import { DrainpipeMonitoringService } from './drainpipe-monitoring.service';
 
 @Module({
   imports: [OpenApiModule],
-  controllers: [],
   providers: [DrainpipeMonitoringService],
   exports: [DrainpipeMonitoringService],
 })

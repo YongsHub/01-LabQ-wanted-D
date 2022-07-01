@@ -4,7 +4,6 @@ import { AnomalyDetectionModule } from './anomaly-detection/anomaly-detection.mo
 
 @Module({
   imports: [AnomalyDetectionModule],
-  controllers: [],
   providers: [
     {
       provide: APP_PIPE,

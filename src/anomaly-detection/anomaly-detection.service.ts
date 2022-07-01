@@ -25,13 +25,16 @@ export class AnomalyDetectionService {
       // Param으로 받은 구분번호가 1~9일 때 01~09로 변경
       if ('1' <= gubn && gubn <= '9') {
         gubn = '0' + gubn;
-      }else if('0' >= gubn || gubn >= '26'){
+      }
+
+      if('0' >= gubn || gubn >= '26'){ // 예외처리
         throw new BadRequestException(Object.assign({
-          statusCode: 404,
+          statusCode: 400,
           success: false,
           message: '찾을 수 없는 gubn 구분번호 입니다.'
         }))
       }
+
       const DrainpipeDataList: ResponseDrainpipeInfoDto[] =
         await this.drainpipeMonitoringService.getDrainpipeApi(
           gubn,

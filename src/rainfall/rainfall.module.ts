@@ -4,7 +4,6 @@ import { RainfallService } from './rainfall.service';
 
 @Module({
   imports: [OpenApiModule],
-  controllers: [],
   providers: [RainfallService],
   exports: [RainfallService],
 })
