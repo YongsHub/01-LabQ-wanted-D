@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
-import { OpenApiModule } from '../common/open-api/openApi.module';
-import { RainfallController } from './rainfall.controller';
+import { OpenApiModule } from '../common/open-api/open-api.module';
 import { RainfallService } from './rainfall.service';
 
 @Module({
   imports: [OpenApiModule],
-  controllers: [RainfallController],
+  controllers: [],
   providers: [RainfallService],
   exports: [RainfallService],
 })
