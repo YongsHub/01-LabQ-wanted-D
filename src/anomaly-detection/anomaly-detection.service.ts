@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { GetRainfallInfos } from 'src/rainfall/dto/get-rainfall-infos.dto';
 import { DrainpipeMonitoringService } from '../drainpipe-monitoring/drainpipe-monitoring.service';
 import { ResponseDrainpipeInfoDto } from '../drainpipe-monitoring/dto/response.drainpipe-info.dto';
@@ -26,7 +26,7 @@ export class AnomalyDetectionService {
       if ('1' <= gubn && gubn <= '9') {
         gubn = '0' + gubn;
       }else if('0' >= gubn || gubn >= '26'){
-        throw new NotFoundException(Object.assign({
+        throw new BadRequestException(Object.assign({
           statusCode: 404,
           success: false,
           message: '찾을 수 없는 gubn 구분번호 입니다.'
@@ -113,8 +113,8 @@ export class AnomalyDetectionService {
       });
 
       return { region: guName, FilteredDataList };
-    }catch(NotFoundException){
-      throw NotFoundException;
+    }catch(BadRequestException){
+      throw BadRequestException;
     }
   }
 }
