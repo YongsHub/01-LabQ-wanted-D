@@ -85,8 +85,8 @@ OPEN_API_KEY={인증키}
 <summary>Before Refartor</summary>
 <img src='./img/dependencies1.png' width=512>
 <div markdown="1">
-- HTTP모듈을 DrainpipeMonitoring, Rainfall, AnomalyDetection 3개의 모듈에서 각각 받음
-- Rainfall모듈의 경우 Config모듈을 OpenApiConfig모듈로 받고 DrainpipeMonitoring모듈의 경우엔 Config모듈을 전역모듈로 받음
+- HTTP모듈을 DrainpipeMonitoring, Rainfall, AnomalyDetection 3개의 모듈에서 각각 받음 <br>
+- Rainfall모듈의 경우 Config모듈을 OpenApiConfig모듈로 받고 DrainpipeMonitoring모듈의 경우엔 Config모듈을 전역모듈로 받음<br>
 - App모듈에서 Config, OpenApiConfig, DrainpipeMonitoring, Rainfall, AnomalyDetection 모듈을 다 받음
 </div>
 </details>
@@ -95,7 +95,7 @@ OPEN_API_KEY={인증키}
 <summary>After Refartor</summary>
 <img src='./img/dependencies2.png' width=512>
 <div markdown="1">
-- OpenApi모듈로 Config와 Http모듈을 통합해서 Rainfall, DrainpipeMonitoring 모듈에서 사용
+- OpenApi모듈로 Config와 Http모듈을 통합해서 Rainfall, DrainpipeMonitoring 모듈에서 사용<br>
 - App모듈에 불필요하게 가져오던 모듈들을 정리하고 AnomalyDetection모듈만 사용
 </div>
 </details>
